@@ -82,9 +82,9 @@ contract SimpleBank {
         /* Add the amount to the user's balance, call the event associated with a deposit,
           then return the balance of the user */
           require(enrolled[msg.sender] == true);
-          uint amount = msg.value;
-          balances[msg.sender] += amount;
-          emit LogDepositMade(msg.sender, amount);
+          uint deposit = msg.value;
+          balances[msg.sender] += deposit;
+          emit LogDepositMade(msg.sender, deposit);
           return balances[msg.sender];
     }
 
